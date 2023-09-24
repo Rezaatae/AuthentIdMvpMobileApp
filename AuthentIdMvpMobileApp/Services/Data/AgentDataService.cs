@@ -21,7 +21,7 @@ namespace AuthentIdMvpMobileApp.Services.Data
 
         public async Task<AuthentIdAgent> GetAgent(int agentId)
         {
-            Uri uri = new Uri($"baseUrl/{agentId}");
+            Uri uri = new Uri("baseUrl/getAgentEndpoint");
             _agent = await _genericRepository.GetByIdAsync<AuthentIdAgent>(uri);
             return _agent;
         }

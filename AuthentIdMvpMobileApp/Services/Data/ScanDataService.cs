@@ -23,14 +23,14 @@ namespace AuthentIdMvpMobileApp.Services.Data
 
         public async Task AddScanAsync(AuthentIdScan authentIdScan)
         {
-            Uri uri = new Uri("http://192.168.0.205:45455/api/AuthentIDScan");
+            Uri uri = new Uri("baseUrl/addScanEndpoint");
             _scan = await _genericRepository.PostAsync<AuthentIdScan>(uri, authentIdScan);
             return;
         }
 
         public async Task<List<AuthentIdScan>> GetAllScansAsync()
         {
-            Uri uri = new Uri("http://192.168.0.205:45455/api/AuthentIDScan");
+            Uri uri = new Uri("baseUrl/getScansEndpoint");
 
             _scanList = await _genericRepository.GetAsync<AuthentIdScan>(uri);
             return _scanList;
