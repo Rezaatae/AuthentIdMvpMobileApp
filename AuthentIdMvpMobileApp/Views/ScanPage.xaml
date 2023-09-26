@@ -2,11 +2,31 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AuthentIdMvpMobileApp.Views.ScanPage"
+             xmlns:viewmodels="clr-namespace:AuthentIdMvpMobileApp.ViewModels"
+             x:DataType="viewmodels:ScanViewModel"
              Title="ScanPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to Authent ID Scan Page"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <StackLayout VerticalOptions="CenterAndExpand" Spacing="10" Margin="50,0">
+            <Label
+                Text="Scan Agent here"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <!--<Button Clicked="Button_Clicked_StartListening"
+                    IsEnabled="{Binding NfcIsEnabled}"
+                    Text="Read Tag" />-->
+            <Button
+                Text="ScanAgent"
+                SemanticProperties.Hint="Scans Agent NFC tag"
+                Command="{Binding ScanCommand}"
+                HorizontalOptions="Center" />
+
+            <!--<Button Clicked="Button_Clicked_StopListening"
+                    IsEnabled="{Binding NfcIsEnabled}"
+                    Text="Stop Listener" />-->
+
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
