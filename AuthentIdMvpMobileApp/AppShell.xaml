@@ -4,11 +4,20 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:AuthentIdMvpMobileApp"
+    xmlns:views="clr-namespace:AuthentIdMvpMobileApp.Views"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar x:Name="ShellTabBar">
+        <Tab Title="Home">
+            <ShellContent ContentTemplate="{DataTemplate views:HomePage}" Route="HomePage" />
+        </Tab>
+        <Tab Title="Scan">
+            <ShellContent ContentTemplate="{DataTemplate views:ScanPage}" Route="ScanPage" />
+        </Tab>
+        <Tab Title="Scan History">
+            <ShellContent ContentTemplate="{DataTemplate views:ScanHistoryPage}" Route="ScanHistoryPage" />
+        </Tab>
+        
+    </TabBar>
 
 </Shell>
