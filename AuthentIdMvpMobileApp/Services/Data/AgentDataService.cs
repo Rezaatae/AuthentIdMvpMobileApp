@@ -21,7 +21,7 @@ namespace AuthentIdMvpMobileApp.Services.Data
 
         public async Task<AuthentIdAgent> GetAgent(int agentId)
         {
-            Uri uri = new Uri("baseUrl/getAgentEndpoint");
+            Uri uri = new Uri($"https://authentidmvp-eastus-dev-001.azurewebsites.net/api/Agent/{agentId}");
             _agent = await _genericRepository.GetByIdAsync<AuthentIdAgent>(uri);
             return _agent;
         }

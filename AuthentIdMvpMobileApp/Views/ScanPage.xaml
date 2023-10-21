@@ -2,11 +2,45 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AuthentIdMvpMobileApp.Views.ScanPage"
-             Title="ScanPage">
+             xmlns:viewmodel="clr-namespace:AuthentIdMvpMobileApp.ViewModels"
+             x:DataType="viewmodel:ScanPageViewModel"
+             Title="Scan"
+             BackgroundColor="White">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to Authent ID Scan Page"
-            VerticalOptions="Center" 
+        <Label />
+        <Label />
+        <Label />
+        <Label />
+        <Label />
+        <Label />
+        <Label />
+        <Label />
+        <Label />
+        <Label />
+        <Label />
+        <Label
+                Text="Press Scan button to begin scanning"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+            TextColor="Black"
+                HorizontalOptions="Center" />
+        <Label />
+        <Label />
+        <Label />
+        <ActivityIndicator IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}"
+                           Color="LightGreen"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           Grid.RowSpan="2"
+                           Grid.ColumnSpan="2"/>
+        <Button
+            Text="Scan"
+            TextColor="White"
+            BackgroundColor="Black"
+            SemanticProperties.Hint="Scans Agent NFC tag"
+            Command="{Binding ScanCommand}"
             HorizontalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>

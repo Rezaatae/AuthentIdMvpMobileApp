@@ -2,11 +2,48 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AuthentIdMvpMobileApp.Views.ScanHistoryPage"
-             Title="ScanHistoryPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to AuthentID scan History page"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:viewmodel="clr-namespace:AuthentIdMvpMobileApp.ViewModels"
+             xmlns:model="clr-namespace:AuthentIdMvpMobileApp.Models"
+             x:DataType="viewmodel:ScanHistoryPageViewModel"
+             Title="Scan History"
+             BackgroundColor="White">
+    <Grid RowDefinitions="100, Auto, *"
+          ColumnDefinitions=".75*, .25*"
+          Padding="10"
+          RowSpacing="10"
+          ColumnSpacing="10">
+        <Button Text="Refresh"
+                TextColor="White"
+                Command="{Binding GetScansCommand}"
+                IsEnabled="{Binding IsNotBusy}"
+                Grid.Row="1"
+                Grid.Column="1" 
+                BackgroundColor="Black"/>
+        <ActivityIndicator IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}"
+                           Color="LightGreen"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           Grid.RowSpan="2"
+                           Grid.ColumnSpan="2"/>
+        <CollectionView Grid.Row="2" Grid.ColumnSpan="2"
+                        ItemsSource="{Binding Scans}"
+                        SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:AuthentIdScan">
+                    <Grid Padding="0, 5">
+                        <Frame>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Frame.GestureRecognizers>
+                                <Label Text="{Binding ScanDate}"
+                                   FontSize="20"
+                                   TextColor="Black"/>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </Grid>
 </ContentPage>

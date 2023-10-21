@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace AuthentIdMvpMobileApp.Interfaces.Services
 {
-    public interface IScanService
+    public interface IUserService
     {
-        Task AddScanAsync(AuthentIdScan authentIdScan);
+        Task<List<AuthentIdUser>> LoginUser(string username, string password);
+        Task<List<AuthentIdScan>> GetUserScans(int userId);
     }
 }

@@ -5,16 +5,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:AuthentIdMvpMobileApp"
     xmlns:views="clr-namespace:AuthentIdMvpMobileApp.Views"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.FlyoutBehavior="Flyout">
 
     <TabBar x:Name="ShellTabBar">
-        <Tab Title="Home">
+        <Tab Title="Home" Icon="home.svg">
             <ShellContent ContentTemplate="{DataTemplate views:HomePage}" Route="HomePage" />
         </Tab>
-        <Tab Title="Scan">
+        <Tab Title="Scan" Icon="fingerprint.svg">
             <ShellContent ContentTemplate="{DataTemplate views:ScanPage}" Route="ScanPage" />
         </Tab>
-        <Tab Title="Scan History">
+        <Tab Title="Scan History" Icon="history.svg">
             <ShellContent ContentTemplate="{DataTemplate views:ScanHistoryPage}" Route="ScanHistoryPage" />
         </Tab>
         

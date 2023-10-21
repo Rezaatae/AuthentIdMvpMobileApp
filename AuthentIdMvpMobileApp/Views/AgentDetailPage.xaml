@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AuthentIdMvpMobileApp.Views.ScanDetailPage"
+             x:Class="AuthentIdMvpMobileApp.Views.AgentDetailPage"
              xmlns:viewmodel="clr-namespace:AuthentIdMvpMobileApp.ViewModels"
-             xmlns:model="clr-namespace:AuthentIdMvpMobileApp.Models"
-             x:DataType="viewmodel:ScanDetailPageViewModel"
-             Title="Scan Details">
+             x:DataType="viewmodel:AgentDetailPageViewModel"
+             Title="Agent verified as:">
     <ScrollView>
         <VerticalStackLayout BackgroundColor="White">
             <Grid ColumnDefinitions="*, Auto, *" RowDefinitions="160, Auto">
@@ -33,26 +32,14 @@
                 <Label />
                 <Label Text="Title:" TextColor="Black" TextDecorations="Underline" />
                 <Label Text="{Binding Agent.Title}" TextColor="Black" FontAttributes="Bold"/>
-                <Label Text="FirstName:" TextColor="Black" TextDecorations="Underline"/>
+                <Label Text="FirstName:" TextColor="Black" TextDecorations="Underline" />
                 <Label Text="{Binding Agent.FirstName}" TextColor="Black" FontAttributes="Bold"/>
-                <Label Text="LastName:" TextColor="Black" TextDecorations="Underline"/>
+                <Label Text="LastName:" TextColor="Black" TextDecorations="Underline" />
                 <Label Text="{Binding Agent.LastName}" TextColor="Black" FontAttributes="Bold"/>
-                <Label Text="PositionHeld:" TextColor="Black" TextDecorations="Underline"/>
+                <Label Text="PositionHeld:" TextColor="Black" TextDecorations="Underline" />
                 <Label Text="{Binding Agent.PositionHeld}" TextColor="Black" FontAttributes="Bold"/>
-                <Label Text="Scan Date/Time:" TextColor="Black" TextDecorations="Underline"/>
-                <Label Text="{Binding Scan.ScanDate}" TextColor="Black" FontAttributes="Bold"/>
                 <Label />
                 <Label />
-                <Button Text="Show scan location on Map"
-                        TextColor="White"
-                        Command="{Binding OpenMapCommand}"
-                        HorizontalOptions="End"
-                        WidthRequest="200"
-                        Margin="8"
-                        Style="{StaticResource ButtonOutline}"
-                        VerticalOptions="End"
-                        BackgroundColor="black"/>
-
             </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>

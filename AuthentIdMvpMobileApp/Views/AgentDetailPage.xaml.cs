@@ -3,12 +3,12 @@ using AuthentIdMvpMobileApp.ViewModels;
 
 namespace AuthentIdMvpMobileApp.Views;
 
-public partial class ScanDetailPage : ContentPage
+public partial class AgentDetailPage : ContentPage
 {
-	public ScanDetailPage(ScanDetailPageViewModel vm)
+	public AgentDetailPage(AgentDetailPageViewModel vm)
 	{
 		InitializeComponent();
-		BindingContext = vm;
+        BindingContext = vm;
 	}
 
     protected override void OnNavigatedTo(NavigatedToEventArgs args)

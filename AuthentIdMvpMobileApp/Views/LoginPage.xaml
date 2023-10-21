@@ -2,11 +2,38 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AuthentIdMvpMobileApp.Views.LoginPage"
-             Title="LoginPage">
-    <VerticalStackLayout>
-        <Entry Placeholder="Username" TextColor="Black"/>
-        <Entry Placeholder="Password" TextColor="Black" IsPassword="True"/>
-        <Button Text="Login" BackgroundColor="Black" TextColor="White"/>
+             Title="Log in"
+             BackgroundColor="AliceBlue">
+    <VerticalStackLayout Padding="5">
+        <Label />
+        <Label />
+        <Label 
+            Text="Welcome to AuthentID"
+            SemanticProperties.HeadingLevel="Level2"
+            SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+            FontSize="18"
+            TextColor="Black"
+            HorizontalOptions="Center" />
+        <Label />
+        <Label 
+            Text="Sign In"
+            SemanticProperties.HeadingLevel="Level2"
+            SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+            FontSize="14"
+            TextColor="Black"
+            HorizontalOptions="Center" />
+        <Label />
+        <Label />
+        <Label />
+        <Label />
+        <Label />
+        <Label />
+        <Label />
+        <Label />
+        <Label />
+        <Entry Placeholder="Username" Text="{Binding UserName}" TextColor="Black"/>
+        <Entry Placeholder="Password" Text="{Binding Password}" TextColor="Black" IsPassword="True"/>
+        <Button Text="Sign In" BackgroundColor="Black" TextColor="White" Command="{Binding LoginCommand}"/>
         <!--<Button Text="Login" BackgroundColor="Black" TextColor="White" Command="{Binding LoginCommand}"/>-->
     </VerticalStackLayout>
 </ContentPage>
